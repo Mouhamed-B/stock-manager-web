@@ -1,39 +1,30 @@
-// hover-active
-
-	$('.hover-active').hover(
-       function(){ 
-       	$(this).addClass('active') 
-       	if ($(this).attr('id')=='signout') {
-       		$(this).css("background-color","red")
-       		$(this).css("border-color","red")
-       	}
-       },
-       function(){
-       	if ($(this).attr('id')=='signout') {
-       		$(this).css("background-color","")
-       		$(this).css("border-color","")
-       	} 
-        $(this).removeClass('active')
-    }
-	)
-
-// Deconnexion
-
-	$('a#signout').click(function (event) {
-		event.stopPropagation();
-		$('button#signout').trigger('click');
-	})
-
-
-// Formulaire responsive 
-
-	function responsiveForm() {
-		let appendContent = document.getElementById("responsive-search-btn");
-		let prependContent = document.getElementById("responsive-option");
-		prependContent.innerHTML =((screen.width<768)?"Tout":"Toute Categorie");
-		appendContent.innerHTML = ((screen.width<768)?"<i class=\"fas fa-search\"></i>":"Rechercher");
-		$(window).resize(function(){
-			responsiveForm();
-		});
-	}
-	responsiveForm();
+var i = 0
+function switchInput(a,b) {
+    i++
+    $(a).on('click focus',function (e) {
+        e.stopPropagation()
+        let attr = $(this).attr('readonly')
+        if (attr !== typeof undefined && attr !== false) {
+            $(this).removeAttr('readonly')
+        }           
+        $(b)
+            .attr('readonly','readonly')
+            .attr('name','')
+        if ($(this).attr('id')=='idcat') {
+            $(this).attr('name','idcat')
+        } else {
+            $(this).attr('name','libellec')
+        } 
+    })
+    if (i<2) {
+        switchInput(b,a)
+    }       
+}
+$('document').ready(function() {
+    $('table a.nav-link').click(function () {
+        $('table a.nav-link').removeClass('active')
+        $('table a.nav-link').attr('aria-selected', 'false')
+        $(this).attr('aria-selected', 'true')
+    })
+    switchInput('select#idcat','input#libellec')
+})
