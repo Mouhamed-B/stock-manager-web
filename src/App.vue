@@ -1,30 +1,60 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+<div id="contenu" class="m-auto shadow-lg rounded">
+  <h1 align='center'>Stock Manager - Dashboard</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-2 col-sm-12 menu">
+      <Sidebar :links="links"/>
+    </div>
+    <div class="tab-content col-md-10 col-sm-12" id="v-pills-tabContent">
+      <router-view/>
+    </div>
   </div>
-  <router-view/>
+</div>
+  
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import Sidebar from '@/components/Sidebar.vue'
+import "bootstrap-icons/font/bootstrap-icons.css"
+export default {
+  name:'App',
+  components:{
+    Sidebar
+  },
+  data(){
+    return {
+      links: [
+        {
+          short:'users',
+          text :'Utilisateurs',
+          route:{
+            name:'UserList'
+          }
+        },
+        {
+          short:'prov',
+          text :'Fournisseurs',
+          route:{
+            name:'ProviderList'
+          }
+        },
+        {
+          short:'catg',
+          text :'Categories',
+          route:{
+            name:'CategoryList'
+          }
+        },
+        {
+          short:'prod',
+          text :'Produits',
+          route:{
+            name:'ProductList'
+          }
+        }
+      ]
     }
   }
 }
-</style>
+</script>
