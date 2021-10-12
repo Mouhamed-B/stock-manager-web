@@ -20,10 +20,7 @@ export default {
         return apiClient.get('/'+id)
     },
     updateProduct(id, product){
-        return apiClient.put('/'+id,{
-            id:id,
-            product:product
-        })
+        return apiClient.put('/'+id,product)
     },
     deleteProduct(id){
         return apiClient.delete('/'+id)
