@@ -14,6 +14,18 @@
   
 </template>
 
+
+<style scoped>
+div#contenu{
+  padding:1em;
+}
+div.tab-content{
+  height: 600px;
+  overflow-y: auto;
+  white-space: normal;
+}
+</style>
+
 <script>
 import Sidebar from '@/components/Sidebar.vue'
 import "bootstrap-icons/font/bootstrap-icons.css"

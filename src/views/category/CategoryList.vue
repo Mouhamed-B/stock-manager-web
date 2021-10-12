@@ -29,7 +29,7 @@
 <script>
 
 import CategoryService from "@/services/CategoryService"
-import Utils  from "../utils"
+import Utils  from "../../utils"
 
 export default {
     name:'CategoryList',

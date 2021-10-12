@@ -32,8 +32,8 @@
 
 <script>
 // @ is an alias to /src
-import ProductService from "../services/ProductService"
-import Utils  from "../utils"
+import ProductService from "../../services/ProductService"
+import Utils  from "../../utils"
 export default {
   name: 'ProductList',
 

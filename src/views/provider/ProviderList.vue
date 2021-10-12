@@ -30,8 +30,8 @@
 
 <script>
 // @ is an alias to /src
-import ProviderService from "../services/ProviderService"
-import Utils  from "../utils"
+import ProviderService from "../../services/ProviderService"
+import Utils  from "../../utils"
 export default {
   name: 'ProviderList',
 
