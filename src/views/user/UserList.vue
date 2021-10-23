@@ -32,8 +32,8 @@
 
 <script>
 // @ is an alias to /src
-import UserService from "../services/UserService"
-import Utils  from "../utils"
+import UserService from "../../services/UserService"
+import Utils  from "../../utils"
 export default {
   name: 'UserList',
 

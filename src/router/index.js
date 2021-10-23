@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import UserList from '../views/UserList.vue'
+import UserList from '../views/user/UserList.vue'
 
 const routes = [
   {
@@ -14,40 +14,40 @@ const routes = [
      // route level code-splitting
      // this generates a separate chunk (about.[hash].js) for this route
      // which is lazy-loaded when the route is visited.
-     component: () => import( '../views/UserDetail.vue')
+     component: () => import( '../views/user/UserDetail.vue')
   },
   {
     path: '/categories/',
     name: 'CategoryList',
-    component: () => import( '../views/CategoryList.vue')
+    component: () => import( '../views/category/CategoryList.vue')
   },
   {
     path: '/categories/:id',
     name: 'CategoryDetail',
     props: true,
-    component: () => import( '../views/CategoryDetail.vue')
+    component: () => import( '../views/category/CategoryDetail.vue')
   },
   {
     path: '/providers/',
     name: 'ProviderList',
-    component: () => import( '../views/ProviderList.vue')
+    component: () => import( '../views/provider/ProviderList.vue')
   },
   {
     path: '/providers/:id',
     name: 'ProviderDetail',
     props: true,
-    component: () => import( '../views/ProviderDetail.vue')
+    component: () => import( '../views/provider/ProviderDetail.vue')
   },
   {
     path: '/products/',
     name: 'ProductList',
-    component: () => import( '../views/ProductList.vue')
+    component: () => import( '../views/product/ProductList.vue')
   },
   {
     path: '/products/:id',
     name: 'ProductDetail',
     props: true,
-    component: () => import( '../views/ProductDetail.vue')
+    component: () => import( '../views/product/ProductDetail.vue')
   }
 ]
 
