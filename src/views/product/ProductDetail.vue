@@ -49,9 +49,10 @@
 <script>
 import ProductService from "@/services/ProductService"
 import Topbar from "@/components/Topbar.vue"
-
+import Mixin from "@/utils"
 export default {
     name : 'ProductDetail',
+    mixins: [Mixin],
     components:{
         Topbar
     },
@@ -64,15 +65,6 @@ export default {
         }
     },
     methods:{
-        toggleEdit(e){
-            e?.preventDefault()
-            this.disabled = !this.disabled
-            
-            document.getElementsByTagName('input').forEach(element => {
-                element.disabled = this.disabled ? 'true' : undefined
-            });
-            document.getElementById('description').disabled = this.disabled ? 'true' : undefined
-        },
         save(e){
             console.log(this.product)
             e.preventDefault()
