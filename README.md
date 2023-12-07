@@ -22,3 +22,6 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### See the Backend of this project
+[Stock Manager API](https://github.com/Mouhamed-B/stock-manager)
